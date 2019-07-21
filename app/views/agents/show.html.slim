@@ -1,7 +1,8 @@
 h1 = @agent.full_name
 p = @agent.bio
 
-= link_to "Add Transaction", new_agent_uploaded_transaction_path(@agent), class: "btn btn-primary"
+= link_to "Add Transaction", new_agent_uploaded_transaction_path(@agent), class: "btn btn-primary mr-2"
+= link_to "Bulk Import Transactions", new_agent_bulk_import_path(@agent), class: "btn btn-primary mx-2"
 
 h3 Recent Transactions
 table

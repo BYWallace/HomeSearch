@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :agents do
     resources :uploaded_transactions
+    resources :bulk_imports, only: [:new, :create]
   end
 end

@@ -1,0 +1,8 @@
+h1 Import Transactions
+
+= form_tag agent_bulk_imports_path, multipart: true do
+  .form-group
+    = label_tag
+    = file_field_tag 'file', class: "form-control"
+
+  = submit_tag "Import", class: "btn btn-primary"
