@@ -17,6 +17,7 @@ gem "slim"
 gem "jquery-rails"
 gem "bootstrap"
 gem "activerecord-import"
+gem "pagy"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

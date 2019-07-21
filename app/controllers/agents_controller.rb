@@ -1,7 +1,9 @@
 class AgentsController < ApplicationController
+  include Pagy::Backend
+
   def show
     @agent = Agent.find(params[:id])
-    @uploaded_transactions = @agent.all_transactions
+    @pagy, @uploaded_transactions = pagy(@agent.all_transactions)
   end
 
   def random_agent
