@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016021817) do
+ActiveRecord::Schema.define(version: 20190721234420) do
 
   create_table "agents", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "uploaded_transactions", force: :cascade do |t|
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
+    t.string "address", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "zip", null: false
     t.date "listing_date"
     t.integer "listing_price"
     t.integer "listing_agent_id"
-    t.date "selling_date"
-    t.integer "selling_price"
+    t.date "selling_date", null: false
+    t.integer "selling_price", null: false
     t.integer "selling_agent_id"
     t.string "status"
     t.string "property_type"

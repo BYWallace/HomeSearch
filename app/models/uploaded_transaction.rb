@@ -4,6 +4,10 @@ class UploadedTransaction < ApplicationRecord
   belongs_to :listing_agent, required: false, class_name: "Agent"
   belongs_to :selling_agent, required: false, class_name: "Agent"
 
+  validates :address, :city, :state, :zip, :selling_date, :selling_price, presence: true
+  validates :selling_price, :listing_price, numericality: { greater_than: 0, allow_nil: true }
+
+
   scope :single_family_homes, -> { where(property_type: "single_family_home") }
   scope :sold, -> { where(status: "sold") }
 

@@ -1,4 +1,10 @@
 h1 New Transaction
+- if @uploaded_transaction.errors.any?
+  .error-explanation.alert.alert-danger
+    .h4 #{ pluralize(@uploaded_transaction.errors.count, "error") } prohibited this transaction from being saved
+    ul
+      - @uploaded_transaction.errors.full_messages.each do |msg|
+        li = msg
 
 = form_for [@agent, @uploaded_transaction] do |f|
   .form-group
