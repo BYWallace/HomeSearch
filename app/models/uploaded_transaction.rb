@@ -7,7 +7,7 @@ class UploadedTransaction < ApplicationRecord
   validates :address, :city, :state, :zip, :selling_date, :selling_price, presence: true
   validates :selling_price, :listing_price, numericality: { greater_than: 0, allow_nil: true }
 
-
+  default_scope { order(selling_date: :desc) }
   scope :single_family_homes, -> { where(property_type: "single_family_home") }
   scope :sold, -> { where(status: "sold") }
 

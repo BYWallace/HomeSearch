@@ -1,5 +1,10 @@
 describe Agent, type: :model do
 
+  describe 'validations' do
+    it { should validate_presence_of(:first_name) }
+    it { should validate_presence_of(:last_name) }
+  end
+  
   describe "#all_transactions" do
     let(:agent) { create :agent }
     let!(:agent_selling_transactions) { create_list :uploaded_transaction, 5, selling_agent: agent }

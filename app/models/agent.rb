@@ -5,7 +5,7 @@ class Agent < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
   def all_transactions
-    UploadedTransaction.where("listing_agent_id = ? OR selling_agent_id = ?", id, id).order(selling_date: :desc)
+    UploadedTransaction.where("listing_agent_id = ? OR selling_agent_id = ?", id, id)
   end
 
   def recent_transactions
